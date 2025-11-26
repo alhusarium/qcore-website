@@ -2,16 +2,20 @@
   {
     "enabled": true,
     "platform": "Instagram",
-    "platformUrl": "https://www.instagram.com/quantumcore_qcore/?igsh=ZmhoaXlyY3FybG1m&utm_source=qr",
+    "platformUrl": "https://www.instagram.com/your_qcore_account",
     "name": "QCORE Community Giveaway #1",
     "period": "01 Dec 2025 – 15 Dec 2025",
     "draw": "16 Dec 2025, 20:00 (EET)",
     "reward": "4 winners × 500 QCORE = 2,000 QCORE",
     "status": "active",
-    "notes": "Follow the official Instagram account, like the post and comment according to the rules."
+
+    "rules": "Participants must: (1) follow the official Instagram account @your_qcore_account; (2) like at least 5 different QCORE posts published before the end of the campaign; (3) share at least 1 QCORE post to their story or feed and tag @your_qcore_account while using the hashtag #QuantumCORE_QCORE.",
+
+    "notes": "Winner selection method will be indicated in the official campaign post (e.g. first users who complete all steps, or a scheduled random draw)."
   },
+
   {
-    "enabled": false,
+    "enabled": true,
     "platform": "Facebook",
     "platformUrl": "https://www.facebook.com/your_qcore_page",
     "name": "QCORE Launch Promo",
@@ -19,10 +23,14 @@
     "draw": "21 Nov 2025, 19:00 (EET)",
     "reward": "1,000 QCORE total",
     "status": "ended",
-    "notes": "Winners were selected and prizes distributed. See the official Facebook post for details."
+
+    "rules": "Participants were required to follow the official page, like the giveaway post and share it publicly at least once.",
+
+    "notes": "Winners were selected and prizes distributed. See the official Facebook announcement post for verification."
   },
+
   {
-    "enabled": false,
+    "enabled": true,
     "platform": "TikTok",
     "platformUrl": "https://www.tiktok.com/@your_qcore_account",
     "name": "QCORE TikTok Challenge",
@@ -30,8 +38,12 @@
     "draw": "21 Jan 2026, 18:00 (EET)",
     "reward": "3,000 QCORE (multiple winners)",
     "status": "upcoming",
-    "notes": "Create and post a video using the official QCORE hashtag. Full rules will be published on TikTok."
+
+    "rules": "Participants must post a TikTok video using the official hashtag #QuantumCORE_QCORE, follow the official TikTok account, and mention @your_qcore_account in the description.",
+
+    "notes": "Full challenge rules and evaluation method will be announced on TikTok prior to the campaign start."
   },
+
   {
     "enabled": false,
     "platform": "X (Twitter)",
@@ -41,6 +53,9 @@
     "draw": "TBA",
     "reward": "TBA",
     "status": "upcoming",
-    "notes": "Planned future campaign on X. This entry is disabled for now (enabled = false)."
+
+    "rules": "Final participation rules will be published when the campaign becomes active.",
+
+    "notes": "Planned future campaign on X. Currently disabled (enabled = false)."
   }
 ]
