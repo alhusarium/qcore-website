@@ -386,7 +386,7 @@
       color: var(--text-muted);
     }
 
-    /* Small pill for addresses so they don't overflow */
+    /* address pills so text doesn't overflow */
     .address-pill {
       display: inline-block;
       max-width: 100%;
@@ -483,6 +483,12 @@
       background: rgba(255, 95, 95, 0.12);
       color: #ffb5b5;
       border-color: rgba(255, 95, 95, 0.4);
+    }
+
+    .giveaway-status-upcoming {
+      background: rgba(249, 185, 74, 0.12);
+      color: #ffdf9b;
+      border-color: rgba(249, 185, 74, 0.5);
     }
 
     .giveaway-body p {
@@ -732,66 +738,20 @@
       </p>
     </section>
 
-    <!-- GIVEAWAYS SECTION -->
+    <!-- GIVEAWAYS SECTION (powered by giveaways.json) -->
     <section id="giveaways">
       <h2>Giveaways & Community Campaigns</h2>
       <p class="section-intro">
         From time to time, the QCORE community may organise promotional giveaways for
         educational and community-building purposes. Details of active or recent
-        campaigns can be listed below. This information is provided purely for
-        transparency and does not represent financial or investment incentives.
+        campaigns are listed below for transparency.
       </p>
 
-      <div class="giveaway-list">
-        <!-- GIVEAWAY #1 – editezi valorile de mai jos când faci un nou giveaway -->
-        <article class="giveaway-item">
-          <div class="giveaway-header">
-            <span class="giveaway-platform">
-              Platform: Instagram
-            </span>
-            <span class="giveaway-status">
-              Active
-            </span>
-          </div>
-          <div class="giveaway-body">
-            <p><strong>Campaign name:</strong> QCORE Community Giveaway #1</p>
-            <p><strong>Period:</strong> 01 Dec 2025 – 15 Dec 2025</p>
-            <p><strong>Draw date:</strong> 16 Dec 2025</p>
-            <p><strong>Reward:</strong> 2,000 QCORE (4 winners × 500 QCORE)</p>
-            <p><strong>How to participate:</strong> Like, follow and comment according to the rules posted on the official Instagram account.</p>
-          </div>
-          <p class="giveaway-note">
-            The giveaway is operated manually by the project founder. Winners and
-            transaction hashes for prize transfers will be published on the relevant
-            social platform and/or on this page.
-          </p>
-        </article>
-
-        <!-- EXEMPLU GIVEAWAY ÎNCHEIAT – poți copia/duplica blocul și modifica -->
-        <article class="giveaway-item">
-          <div class="giveaway-header">
-            <span class="giveaway-platform">
-              Platform: Facebook
-            </span>
-            <span class="giveaway-status giveaway-status-ended">
-              Ended
-            </span>
-          </div>
-          <div class="giveaway-body">
-            <p><strong>Campaign name:</strong> QCORE Launch Promo</p>
-            <p><strong>Period:</strong> 10 Nov 2025 – 20 Nov 2025</p>
-            <p><strong>Draw date:</strong> 21 Nov 2025</p>
-            <p><strong>Total reward:</strong> 1,000 QCORE</p>
-            <p><strong>Status:</strong> Winners selected and prizes distributed.</p>
-          </div>
-          <p class="giveaway-note">
-            For transparency, transaction hashes and winner usernames can be added here
-            or linked to a public post on the respective platform.
-          </p>
-        </article>
+      <div id="giveawayList" class="giveaway-list">
+        <!-- Cards will be injected here by JavaScript based on giveaways.json -->
       </div>
 
-      <p class="giveaway-note">
+      <p class="giveaway-note" id="giveawayNote">
         Note: Giveaways do not guarantee any future value or utility for QCORE. They are
         optional community activities and should not be interpreted as investment
         returns, yield, staking or similar concepts.
@@ -863,7 +823,7 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text);
       } else {
-        // Fallback pentru browsere mai vechi
+        // fallback pentru browsere mai vechi
         const temp = document.createElement("textarea");
         temp.value = text;
         document.body.appendChild(temp);
@@ -878,6 +838,97 @@
         fb.style.display = "none";
       }, 1200);
     }
+
+    // ---- GIVEAWAYS: load from giveaways.json ----
+    function renderGiveaways(data) {
+      const container = document.getElementById("giveawayList");
+      const note = document.getElementById("giveawayNote");
+
+      if (!Array.isArray(data)) {
+        container.innerHTML = "<p class='giveaway-note'>Unable to load giveaways at this time.</p>";
+        return;
+      }
+
+      // păstrăm doar cele enabled = true
+      const active = data.filter((g) => g.enabled);
+
+      if (active.length === 0) {
+        container.innerHTML =
+          "<p class='giveaway-note'>There are no active or published giveaways at this time.</p>";
+        return;
+      }
+
+      container.innerHTML = "";
+
+      active.forEach((g) => {
+        const status = (g.status || "active").toLowerCase();
+        let statusClass = "giveaway-status";
+        if (status === "ended") statusClass += " giveaway-status-ended";
+        if (status === "upcoming") statusClass += " giveaway-status-upcoming";
+
+        const statusLabel = status.charAt(0).toUpperCase() + status.slice(1);
+
+        const platformLabel = g.platform || "Platform";
+        const platformUrl = g.platformUrl || "";
+
+        const item = document.createElement("article");
+        item.className = "giveaway-item";
+
+        item.innerHTML = `
+          <div class="giveaway-header">
+            <span class="giveaway-platform">
+              Platform: ${
+                platformUrl
+                  ? `<a href="${platformUrl}" target="_blank" rel="noopener">${platformLabel}</a>`
+                  : platformLabel
+              }
+            </span>
+            <span class="${statusClass}">
+              ${statusLabel}
+            </span>
+          </div>
+          <div class="giveaway-body">
+            ${
+              g.name
+                ? `<p><strong>Campaign name:</strong> ${g.name}</p>`
+                : ""
+            }
+            ${
+              g.period
+                ? `<p><strong>Period:</strong> ${g.period}</p>`
+                : ""
+            }
+            ${
+              g.draw
+                ? `<p><strong>Draw date &amp; time:</strong> ${g.draw}</p>`
+                : ""
+            }
+            ${
+              g.reward
+                ? `<p><strong>Reward:</strong> ${g.reward}</p>`
+                : ""
+            }
+            ${
+              g.notes
+                ? `<p><strong>Notes:</strong> ${g.notes}</p>`
+                : ""
+            }
+          </div>
+        `;
+
+        container.appendChild(item);
+      });
+    }
+
+    // Fetch giveaways.json
+    fetch("giveaways.json")
+      .then((res) => res.json())
+      .then(renderGiveaways)
+      .catch(() => {
+        const container = document.getElementById("giveawayList");
+        container.innerHTML =
+          "<p class='giveaway-note'>Unable to load giveaways configuration.</p>";
+      });
   </script>
 </body>
 </html>
