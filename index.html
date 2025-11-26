@@ -277,7 +277,7 @@
 
     /* CONTRACT COPY BOX (hero) */
     .contract-box {
-      margin-top: 6px;
+      margin-top: 10px;
     }
 
     .contract-label {
@@ -386,6 +386,37 @@
       color: var(--text-muted);
     }
 
+    /* Small pill for addresses so they don't overflow */
+    .address-pill {
+      display: inline-block;
+      max-width: 100%;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .address-pill code {
+      display: block;
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.8rem;
+      word-break: break-all;
+    }
+
+    .address-inline {
+      display: inline-block;
+      max-width: 100%;
+      padding: 3px 7px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.35);
+      margin-left: 4px;
+    }
+
+    .address-inline code {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.8rem;
+      word-break: break-all;
+    }
+
     code {
       font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 0.86rem;
@@ -403,6 +434,70 @@
 
     ul li {
       margin-bottom: 4px;
+    }
+
+    /* GIVEAWAYS SECTION */
+    .giveaway-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .giveaway-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 14px;
+      font-size: 0.94rem;
+    }
+
+    .giveaway-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .giveaway-platform {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .giveaway-status {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(144, 238, 144, 0.12);
+      color: #a4f8a4;
+      border: 1px solid rgba(144, 238, 144, 0.4);
+      white-space: nowrap;
+    }
+
+    .giveaway-status-ended {
+      background: rgba(255, 95, 95, 0.12);
+      color: #ffb5b5;
+      border-color: rgba(255, 95, 95, 0.4);
+    }
+
+    .giveaway-body p {
+      margin: 2px 0;
+      color: var(--text-main);
+    }
+
+    .giveaway-body strong {
+      color: #ffe39c;
+    }
+
+    .giveaway-note {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     .disclaimer {
@@ -458,6 +553,7 @@
         <a href="#overview">Overview</a>
         <a href="#vision">Use Cases</a>
         <a href="#trading">Trading</a>
+        <a href="#giveaways">Giveaways</a>
         <a href="#disclaimer">Disclaimer</a>
       </nav>
     </div>
@@ -524,9 +620,7 @@
         <div class="contract-box">
           <span class="contract-label">Contract Address</span>
           <div class="contract-inner">
-            <code id="contractAddress">
-0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83
-            </code>
+            <code id="contractAddress">0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
             <button class="copy-btn" type="button" onclick="copyContract()">
               Copy
             </button>
@@ -568,7 +662,9 @@
         </div>
         <div class="token-card">
           <span>Contract Address</span>
-          <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
+          <div class="address-pill">
+            <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
+          </div>
         </div>
       </div>
       <p style="margin-top:16px;font-size:0.95rem;">
@@ -625,12 +721,80 @@
           <strong>QCORE / POL</strong> on a decentralized exchange (e.g. QuickSwap). A
           direct link may be shared once there is sufficient on-chain liquidity and
           activity. Always verify that the contract address matches:
-          <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>.
+          <span class="address-inline">
+            <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
+          </span>
         </li>
       </ul>
       <p style="margin-top:10px;font-size:0.95rem;color:var(--text-muted);">
         There is no guarantee of secondary market liquidity. You may not be able to buy
         or sell QCORE at any given time or at any desired price.
+      </p>
+    </section>
+
+    <!-- GIVEAWAYS SECTION -->
+    <section id="giveaways">
+      <h2>Giveaways & Community Campaigns</h2>
+      <p class="section-intro">
+        From time to time, the QCORE community may organise promotional giveaways for
+        educational and community-building purposes. Details of active or recent
+        campaigns can be listed below. This information is provided purely for
+        transparency and does not represent financial or investment incentives.
+      </p>
+
+      <div class="giveaway-list">
+        <!-- GIVEAWAY #1 – editezi valorile de mai jos când faci un nou giveaway -->
+        <article class="giveaway-item">
+          <div class="giveaway-header">
+            <span class="giveaway-platform">
+              Platform: Instagram
+            </span>
+            <span class="giveaway-status">
+              Active
+            </span>
+          </div>
+          <div class="giveaway-body">
+            <p><strong>Campaign name:</strong> QCORE Community Giveaway #1</p>
+            <p><strong>Period:</strong> 01 Dec 2025 – 15 Dec 2025</p>
+            <p><strong>Draw date:</strong> 16 Dec 2025</p>
+            <p><strong>Reward:</strong> 2,000 QCORE (4 winners × 500 QCORE)</p>
+            <p><strong>How to participate:</strong> Like, follow and comment according to the rules posted on the official Instagram account.</p>
+          </div>
+          <p class="giveaway-note">
+            The giveaway is operated manually by the project founder. Winners and
+            transaction hashes for prize transfers will be published on the relevant
+            social platform and/or on this page.
+          </p>
+        </article>
+
+        <!-- EXEMPLU GIVEAWAY ÎNCHEIAT – poți copia/duplica blocul și modifica -->
+        <article class="giveaway-item">
+          <div class="giveaway-header">
+            <span class="giveaway-platform">
+              Platform: Facebook
+            </span>
+            <span class="giveaway-status giveaway-status-ended">
+              Ended
+            </span>
+          </div>
+          <div class="giveaway-body">
+            <p><strong>Campaign name:</strong> QCORE Launch Promo</p>
+            <p><strong>Period:</strong> 10 Nov 2025 – 20 Nov 2025</p>
+            <p><strong>Draw date:</strong> 21 Nov 2025</p>
+            <p><strong>Total reward:</strong> 1,000 QCORE</p>
+            <p><strong>Status:</strong> Winners selected and prizes distributed.</p>
+          </div>
+          <p class="giveaway-note">
+            For transparency, transaction hashes and winner usernames can be added here
+            or linked to a public post on the respective platform.
+          </p>
+        </article>
+      </div>
+
+      <p class="giveaway-note">
+        Note: Giveaways do not guarantee any future value or utility for QCORE. They are
+        optional community activities and should not be interpreted as investment
+        returns, yield, staking or similar concepts.
       </p>
     </section>
 
@@ -691,7 +855,7 @@
     // Current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Copy contract address
+    // Copy contract address (hero box)
     function copyContract() {
       const el = document.getElementById("contractAddress");
       const text = (el.textContent || el.innerText).trim();
@@ -699,7 +863,7 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text);
       } else {
-        // fallback vechi
+        // Fallback pentru browsere mai vechi
         const temp = document.createElement("textarea");
         temp.value = text;
         document.body.appendChild(temp);
