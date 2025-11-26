@@ -3,110 +3,476 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum CORE (QCORE) - Official Website</title>
-  <meta name="description" content="Quantum CORE (QCORE) is a utility token on Polygon designed for future integration with digital products and services." />
+
+  <title>Quantum CORE (QCORE) – Official Website</title>
+  <meta
+    name="description"
+    content="Quantum CORE (QCORE) is an experimental utility token on the Polygon (PoS) network, designed for future integration with digital products, services and payments."
+  />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quantum CORE (QCORE) – Official Website" />
+  <meta
+    property="og:description"
+    content="Community-driven experimental utility token on the Polygon (PoS) network."
+  />
+  <meta property="og:url" content="https://qcore.example" />
+  <meta property="og:image" content="https://qcore.example/assets/qcore-og.png" />
+
   <style>
+    :root {
+      --bg-main: #050816;
+      --bg-panel: rgba(10, 16, 33, 0.95);
+      --bg-card: rgba(8, 12, 28, 0.95);
+      --border-soft: rgba(132, 146, 255, 0.35);
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --accent: #8ac4ff;
+      --accent-strong: #f9b94a;
+      --text-main: #f7f7ff;
+      --text-muted: #b6bdd8;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
-      color: #f5f5f5;
+      background: radial-gradient(circle at top, #101735 0, #050816 52%, #020308 100%);
+      color: var(--text-main);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
-      padding: 40px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top, #5c6cff 0, #050816 55%);
-    }
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 2.4rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    header p {
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 940px;
-      margin: 30px auto 60px;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 32px;
-      padding: 20px;
-      border-radius: 14px;
-      background: rgba(12, 19, 38, 0.9);
-      border: 1px solid rgba(120, 120, 255, 0.25);
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #e1e4ff;
-    }
-    .token-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-    }
-    .token-card {
-      padding: 12px 14px;
-      border-radius: 10px;
-      background: rgba(9, 14, 30, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.95rem;
-    }
-    .token-card span {
-      display: block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.8;
-      margin-bottom: 4px;
-    }
-    code {
-      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 0.85rem;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
+
     a {
-      color: #8ac4ff;
+      color: var(--accent);
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .disclaimer {
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top navigation */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 22, 0.9),
+        rgba(5, 8, 22, 0.75),
+        transparent
+      );
+      border-bottom: 1px solid rgba(90, 105, 210, 0.3);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .nav-brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    header {
+      padding: 70px 0 34px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw, 2.7rem);
+      line-height: 1.18;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #f9b94a, #ffe9b0, #8ac4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      max-width: 520px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
       font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-meta span {
       opacity: 0.85;
     }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #ffe39c 0, #f9b94a 24%, #c68823 70%);
+      color: #150d02;
+      box-shadow: 0 10px 30px rgba(249, 185, 74, 0.45);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 14px 40px rgba(249, 185, 74, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(8, 12, 28, 0.9);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(12, 17, 36, 0.96);
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, rgba(251, 198, 88, 0.16), transparent 58%),
+        var(--bg-panel);
+      border: 1px solid var(--border-soft);
+      padding: 20px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.82;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-main {
+      font-size: 1.7rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-item span {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .hero-card-item code {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.75rem;
+      background: rgba(0, 0, 0, 0.32);
+      padding: 2px 6px;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      padding-bottom: 60px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-panel);
+      border: 1px solid var(--border-soft);
+      padding: 22px 20px 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e1e4ff;
+    }
+
+    .section-intro {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .token-card {
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+
+    .token-card span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      opacity: 0.8;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    code {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.86rem;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 6px 0 0;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    .disclaimer {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 95, 95, 0.4);
+      background: radial-gradient(circle at top left, rgba(255, 95, 95, 0.16), transparent 60%),
+        rgba(11, 7, 14, 0.96);
+    }
+
+    .disclaimer strong {
+      color: #ffb5b5;
+    }
+
     footer {
       text-align: center;
-      padding: 20px 10px 30px;
-      font-size: 0.8rem;
-      opacity: 0.7;
+      padding: 22px 12px 30px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(70, 81, 150, 0.5);
+      margin-top: 20px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+      header {
+        padding-top: 52px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Top navigation -->
+  <div class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img src="assets/qcore-logo.png" alt="QCORE Logo" />
+        <span>Quantum CORE</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#vision">Use Cases</a>
+        <a href="#trading">Trading</a>
+        <a href="#disclaimer">Disclaimer</a>
+      </nav>
+    </div>
+  </div>
+
   <header>
-    <h1>Quantum CORE (QCORE)</h1>
-    <p>
-      Quantum CORE (QCORE) is a community-driven utility token built on the
-      Polygon (PoS) network, designed for future integration with digital products,
-      services and payments.
-    </p>
+    <div class="container hero">
+      <div>
+        <h1 class="hero-title">
+          <span>Quantum CORE (QCORE)</span><br />
+          experimental utility token
+        </h1>
+        <p class="hero-sub">
+          Quantum CORE (QCORE) is a community-driven, experimental utility token built on
+          the Polygon (PoS) network, designed for potential future integration with
+          digital products, services and payments.
+        </p>
+        <div class="hero-meta">
+          <span>Polygon (PoS) • POL</span>
+          <span>Contract: 0x2dc2...1f83</span>
+          <span>Supply: 100,000,000 QCORE</span>
+        </div>
+        <div class="hero-actions">
+          <a
+            class="btn-primary"
+            href="https://polygonscan.com/token/0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83"
+            target="_blank"
+            rel="noopener"
+          >
+            View on PolygonScan
+          </a>
+          <a class="btn-ghost" href="#disclaimer">
+            Read risk disclaimer
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">Token Snapshot</div>
+        <div class="hero-card-main">QCORE on Polygon</div>
+        <div class="hero-card-sub">
+          This page is the primary reference for the Quantum CORE contract address and
+          basic token information.
+        </div>
+        <div class="hero-card-grid">
+          <div class="hero-card-item">
+            <span>Contract Address</span>
+            <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
+          </div>
+          <div class="hero-card-item">
+            <span>Total Supply</span>
+            100,000,000 QCORE
+          </div>
+          <div class="hero-card-item">
+            <span>Decimals</span>
+            18
+          </div>
+          <div class="hero-card-item">
+            <span>Network</span>
+            Polygon (PoS) / POL
+          </div>
+        </div>
+      </aside>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section id="overview">
       <h2>Token Overview</h2>
+      <p class="section-intro">
+        Quantum CORE (QCORE) is an on-chain ERC-20–style token deployed on the Polygon
+        (PoS) network. The information below is provided solely for transparency and
+        orientation.
+      </p>
       <div class="token-grid">
         <div class="token-card">
           <span>Token Name</span>
@@ -133,84 +499,120 @@
           <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
         </div>
       </div>
-      <p style="margin-top:16px;">
-        You can view the official contract on PolygonScan: <br />
-        <a href="https://polygonscan.com/token/0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83" target="_blank" rel="noopener">
+      <p style="margin-top:16px;font-size:0.95rem;">
+        Verify the official contract on PolygonScan:<br />
+        <a
+          href="https://polygonscan.com/token/0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83"
+          target="_blank"
+          rel="noopener"
+        >
           View QCORE on PolygonScan
         </a>
       </p>
     </section>
 
-    <section>
-      <h2>Vision & Use Cases</h2>
-      <p>
-        Quantum CORE (QCORE) is planned to be used as a utility token in a future
-        ecosystem of digital products and services, including:
+    <section id="vision">
+      <h2>Vision & Potential Use Cases</h2>
+      <p class="section-intro">
+        QCORE is intended as a utility token concept for a future ecosystem of digital
+        products and services. The project is in an early, experimental stage and there
+        is no guarantee that any particular use case will be built, launched or
+        maintained.
       </p>
       <ul>
-        <li>Online payments for selected digital goods and services;</li>
-        <li>Access to certain premium features or content within partner platforms;</li>
-        <li>Potential loyalty or reward mechanics for long-term community members.</li>
+        <li>Possible payments for selected digital goods and services;</li>
+        <li>
+          Potential access to certain premium features or content within partner or
+          experimental platforms;
+        </li>
+        <li>
+          Exploratory loyalty or reward mechanics for long-term community members, if
+          and when developed.
+        </li>
       </ul>
-      <p>
-        The project is currently in an early and experimental phase. More concrete
-        integrations and partnerships will be announced over time on this website
-        and through official communication channels.
+      <p style="margin-top:10px;font-size:0.95rem;color:var(--text-muted);">
+        Any integrations, utilities or partnerships, if they materialise, will be
+        communicated through this website and official communication channels. Nothing
+        here should be interpreted as a promise or guarantee of future features or
+        financial returns.
       </p>
     </section>
 
-    <section>
+    <section id="trading">
       <h2>Trading Information</h2>
-      <p>
-        QCORE is currently available as a token on the Polygon (PoS) network.
-        Initial liquidity has been provided by the project founder on a
-        decentralized exchange.
+      <p class="section-intro">
+        QCORE currently exists as an on-chain token on Polygon (PoS). Liquidity, volume
+        and price are fully determined by the open market and may be extremely limited,
+        volatile or illiquid.
       </p>
-      <p>
-        Current main trading pair:
+      <p style="font-size:0.95rem;">
+        Planned main trading pair:
       </p>
       <ul>
         <li>
-          QCORE / POL (QuickSwap) – link will be shared once sufficient
-          on-chain liquidity and volume are established.
+          <strong>QCORE / POL</strong> on a decentralized exchange (e.g. QuickSwap). A
+          direct link may be shared once there is sufficient on-chain liquidity and
+          activity. Always verify that the contract address matches:
+          <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>.
         </li>
       </ul>
-      <p>
-        Always verify the contract address before trading:
-        <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>.
+      <p style="margin-top:10px;font-size:0.95rem;color:var(--text-muted);">
+        There is no guarantee of secondary market liquidity. You may not be able to buy
+        or sell QCORE at any given time or at any desired price.
       </p>
     </section>
 
-    <section>
-      <h2>Community & Updates</h2>
-      <p>
-        Official social media channels and community links are being prepared and
-        will be published here once they are live.
+    <section id="community">
+      <h2>Community & Official Sources</h2>
+      <p class="section-intro">
+        Official social media channels and community spaces are being prepared. Until
+        they are announced, this website and the PolygonScan contract page are the
+        primary reference sources for QCORE.
       </p>
-      <p>
-        For now, this website and the PolygonScan contract page represent the main
-        reference sources for Quantum CORE (QCORE) information.
-      </p>
+      <ul>
+        <li>
+          Always double-check contract addresses from this page or PolygonScan before
+          interacting with any token that claims to be QCORE.
+        </li>
+        <li>
+          Be cautious of unsolicited messages, airdrops or groups claiming to represent
+          QCORE or its founder.
+        </li>
+      </ul>
     </section>
 
-    <section class="disclaimer">
-      <h2>Important Disclaimer</h2>
+    <section id="disclaimer" class="disclaimer">
+      <h2>Important Legal & Risk Disclaimer</h2>
       <p>
-        Quantum CORE (QCORE) is a highly experimental cryptoasset. Nothing on this
-        website constitutes financial, investment or legal advice. Digital assets
-        are volatile and may involve a high level of risk, including the possible
-        loss of all funds.
+        <strong>Quantum CORE (QCORE) is a highly experimental and speculative cryptoasset.</strong>
+        This website is provided strictly for informational and educational purposes
+        only. QCORE currently has <strong>no guaranteed utility, no intrinsic value and
+        no promise of profit, yield or future appreciation.</strong>
       </p>
       <p>
-        Always do your own research and consult a qualified professional before
-        making any financial decisions. By interacting with QCORE, you acknowledge
-        that you are doing so at your own risk and responsibility.
+        Nothing on this website (or in any related communication) constitutes financial,
+        investment, legal or tax advice, an offer, solicitation or recommendation to buy
+        or sell any asset or to engage in any strategy. Digital assets are volatile and
+        may involve a
+        <strong>high risk of total loss</strong>.
+      </p>
+      <p>
+        You must always perform your own independent research and, where appropriate,
+        consult a qualified professional before making any financial decisions. By
+        interacting with QCORE in any way, you acknowledge that you do so entirely at
+        your own risk and responsibility.
+      </p>
+      <p>
+        QCORE is not registered as a security or investment product in any jurisdiction.
+        Regulatory treatment of digital assets can change and may adversely affect the
+        existence, transfer or value of QCORE.
       </p>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Quantum CORE. All rights reserved.
+    © <span id="year"></span> Quantum CORE. All rights reserved. · This website does not
+    provide investment advice.
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
