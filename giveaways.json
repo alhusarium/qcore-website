@@ -1,18 +1,18 @@
 [
   {
-    "enabled": true,
-    "platform": "Instagram",
-    "platformUrl": "https://www.instagram.com/your_qcore_account",
-    "name": "QCORE Community Giveaway #1",
-    "period": "01 Dec 2025 – 15 Dec 2025",
-    "draw": "16 Dec 2025, 20:00 (EET)",
-    "reward": "4 winners × 500 QCORE = 2,000 QCORE",
-    "status": "updoming",
+	  "enabled": true,
+	  "platform": "Instagram",
+	  "platformUrl": "https://www.instagram.com/your_qcore_account",
+	  "name": "QCORE Community Giveaway #1",
+	  "period": "01 Dec 2025 – 15 Dec 2025",
+	  "draw": "16 Dec 2025, 23:30 (EET)",
+	  "reward": "4 winners × 500 QCORE = 2,000 QCORE",
+	  "status": "active",
 
-    "rules": "Participants must: (1) follow the official Instagram account @your_qcore_account; (2) like at least 5 different QCORE posts published before the end of the campaign; (3) share at least 1 QCORE post to their story or feed and tag @your_qcore_account while using the hashtag #QuantumCORE_QCORE.",
+	  "rules": "To participate, you must like at least 5 different posts on our official Instagram page and share one of our posts from the official profile: https://www.instagram.com/quantumcore_qcore/?igsh=ZmhoaXlyY3FybG1m&utm_source=qr.",
 
-    "notes": "Winner selection method will be indicated in the official campaign post (e.g. first users who complete all steps, or a scheduled random draw)."
-  },
+	  "notes": "The draw will take place on the last day of the campaign at 23:30 (EET). Winners will be announced on the official Instagram account."
+	},
 
   {
     "enabled": true,
