@@ -15,7 +15,7 @@
 	},
 
   {
-    "enabled": true,
+    "enabled": false,
     "platform": "Facebook",
     "platformUrl": "https://www.facebook.com/your_qcore_page",
     "name": "QCORE Launch Promo",
@@ -30,7 +30,7 @@
   },
 
   {
-    "enabled": true,
+    "enabled": false,
     "platform": "TikTok",
     "platformUrl": "https://www.tiktok.com/@your_qcore_account",
     "name": "QCORE TikTok Challenge",
