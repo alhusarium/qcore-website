@@ -1,0 +1,46 @@
+[
+  {
+    "enabled": true,
+    "platform": "Instagram",
+    "platformUrl": "https://www.instagram.com/your_qcore_account",
+    "name": "QCORE Community Giveaway #1",
+    "period": "01 Dec 2025 – 15 Dec 2025",
+    "draw": "16 Dec 2025, 20:00 (EET)",
+    "reward": "4 winners × 500 QCORE = 2,000 QCORE",
+    "status": "active",
+    "notes": "Follow the official Instagram account, like the post and comment according to the rules."
+  },
+  {
+    "enabled": true,
+    "platform": "Facebook",
+    "platformUrl": "https://www.facebook.com/your_qcore_page",
+    "name": "QCORE Launch Promo",
+    "period": "10 Nov 2025 – 20 Nov 2025",
+    "draw": "21 Nov 2025, 19:00 (EET)",
+    "reward": "1,000 QCORE total",
+    "status": "ended",
+    "notes": "Winners were selected and prizes distributed. See the official Facebook post for details."
+  },
+  {
+    "enabled": true,
+    "platform": "TikTok",
+    "platformUrl": "https://www.tiktok.com/@your_qcore_account",
+    "name": "QCORE TikTok Challenge",
+    "period": "05 Jan 2026 – 20 Jan 2026",
+    "draw": "21 Jan 2026, 18:00 (EET)",
+    "reward": "3,000 QCORE (multiple winners)",
+    "status": "upcoming",
+    "notes": "Create and post a video using the official QCORE hashtag. Full rules will be published on TikTok."
+  },
+  {
+    "enabled": false,
+    "platform": "X (Twitter)",
+    "platformUrl": "https://x.com/your_qcore_account",
+    "name": "QCORE on X Giveaway",
+    "period": "TBA",
+    "draw": "TBA",
+    "reward": "TBA",
+    "status": "upcoming",
+    "notes": "Planned future campaign on X. This entry is disabled for now (enabled = false)."
+  }
+]
