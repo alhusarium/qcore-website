@@ -11,7 +11,7 @@
     "notes": "Follow the official Instagram account, like the post and comment according to the rules."
   },
   {
-    "enabled": true,
+    "enabled": false,
     "platform": "Facebook",
     "platformUrl": "https://www.facebook.com/your_qcore_page",
     "name": "QCORE Launch Promo",
@@ -22,7 +22,7 @@
     "notes": "Winners were selected and prizes distributed. See the official Facebook post for details."
   },
   {
-    "enabled": true,
+    "enabled": false,
     "platform": "TikTok",
     "platformUrl": "https://www.tiktok.com/@your_qcore_account",
     "name": "QCORE TikTok Challenge",
