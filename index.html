@@ -7,7 +7,7 @@
   <title>Quantum CORE (QCORE) – Official Website</title>
   <meta
     name="description"
-    content="Quantum CORE (QCORE) is an experimental utility token on the Polygon (PoS) network, designed for future integration with digital products, services and payments."
+    content="Quantum CORE (QCORE) is an experimental utility token on the Polygon (PoS) network, designed for potential future integration with digital products, services and payments."
   />
   <meta name="robots" content="index,follow" />
 
@@ -18,8 +18,11 @@
     property="og:description"
     content="Community-driven experimental utility token on the Polygon (PoS) network."
   />
-  <meta property="og:url" content="https://qcore.example" />
-  <meta property="og:image" content="https://qcore.example/assets/qcore-og.png" />
+  <meta property="og:url" content="https://alhusarium.github.io/qcore-website/" />
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/alhusarium/qcore-assets/main/logos/qcore.png"
+  />
 
   <style>
     :root {
@@ -99,8 +102,8 @@
     }
 
     .nav-brand img {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
       object-fit: contain;
     }
@@ -232,7 +235,7 @@
       background: radial-gradient(circle at top, rgba(251, 198, 88, 0.16), transparent 58%),
         var(--bg-panel);
       border: 1px solid var(--border-soft);
-      padding: 20px 18px 16px;
+      padding: 20px 18px 18px;
       box-shadow: var(--shadow-soft);
     }
 
@@ -252,7 +255,7 @@
     .hero-card-sub {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-card-grid {
@@ -260,6 +263,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
       font-size: 0.8rem;
+      margin-bottom: 10px;
     }
 
     .hero-card-item span {
@@ -271,13 +275,62 @@
       margin-bottom: 2px;
     }
 
-    .hero-card-item code {
-      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    /* CONTRACT COPY BOX (hero) */
+    .contract-box {
+      margin-top: 6px;
+    }
+
+    .contract-label {
+      display: block;
       font-size: 0.75rem;
-      background: rgba(0, 0, 0, 0.32);
-      padding: 2px 6px;
-      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9aa3c7;
+      margin-bottom: 4px;
+    }
+
+    .contract-inner {
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 10px 8px 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .contract-inner code {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.8rem;
+      color: #e7e9f7;
       word-break: break-all;
+    }
+
+    .copy-btn {
+      border: none;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffe39c, #f9b94a);
+      color: #1e1402;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      background: linear-gradient(135deg, #ffd680, #f7b032);
+      transform: translateY(-1px);
+    }
+
+    .copy-feedback {
+      display: none;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: #9effae;
+      opacity: 0.95;
     }
 
     /* MAIN CONTENT */
@@ -384,6 +437,9 @@
       header {
         padding-top: 52px;
       }
+      .contract-inner {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -392,7 +448,10 @@
   <div class="site-nav">
     <div class="nav-inner">
       <div class="nav-brand">
-        <img src="assets/qcore-logo.png" alt="QCORE Logo" />
+        <img
+          src="https://raw.githubusercontent.com/alhusarium/qcore-assets/main/logos/qcore.png"
+          alt="QCORE Logo"
+        />
         <span>Quantum CORE</span>
       </div>
       <nav class="nav-links">
@@ -418,7 +477,6 @@
         </p>
         <div class="hero-meta">
           <span>Polygon (PoS) • POL</span>
-          <span>Contract: 0x2dc2...1f83</span>
           <span>Supply: 100,000,000 QCORE</span>
         </div>
         <div class="hero-actions">
@@ -445,21 +503,35 @@
         </div>
         <div class="hero-card-grid">
           <div class="hero-card-item">
-            <span>Contract Address</span>
-            <code>0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83</code>
-          </div>
-          <div class="hero-card-item">
-            <span>Total Supply</span>
-            100,000,000 QCORE
+            <span>Network</span>
+            Polygon (PoS) / POL
           </div>
           <div class="hero-card-item">
             <span>Decimals</span>
             18
           </div>
           <div class="hero-card-item">
-            <span>Network</span>
-            Polygon (PoS) / POL
+            <span>Total Supply</span>
+            100,000,000 QCORE
           </div>
+          <div class="hero-card-item">
+            <span>Standard</span>
+            ERC-20 style token
+          </div>
+        </div>
+
+        <!-- CONTRACT ADDRESS COPY BOX -->
+        <div class="contract-box">
+          <span class="contract-label">Contract Address</span>
+          <div class="contract-inner">
+            <code id="contractAddress">
+0x2dc2b7720a0FD571Ef3fBdf251d7D942d7fa1f83
+            </code>
+            <button class="copy-btn" type="button" onclick="copyContract()">
+              Copy
+            </button>
+          </div>
+          <span class="copy-feedback" id="copyFeedback">Contract address copied</span>
         </div>
       </aside>
     </div>
@@ -613,9 +685,35 @@
   <footer>
     © <span id="year"></span> Quantum CORE. All rights reserved. · This website does not
     provide investment advice.
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
+
+  <script>
+    // Current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copy contract address
+    function copyContract() {
+      const el = document.getElementById("contractAddress");
+      const text = (el.textContent || el.innerText).trim();
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      } else {
+        // fallback vechi
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+      }
+
+      const fb = document.getElementById("copyFeedback");
+      fb.style.display = "inline-block";
+      setTimeout(() => {
+        fb.style.display = "none";
+      }, 1200);
+    }
+  </script>
 </body>
 </html>
